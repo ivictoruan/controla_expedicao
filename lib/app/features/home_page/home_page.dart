@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Home Page, is responsable for delivery the main functionalities like:
+/// create registers, open history..
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -43,6 +46,25 @@ class _HomePageState extends State<HomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Registrar encomendas!',
         child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: "Registrar",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_basket),
+            label: "Minhas encomendas",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+
+            // icon: Icon(Icons.favorite),
+            label: "Minha conta",
+          ),
+        ],
       ),
     );
   }
