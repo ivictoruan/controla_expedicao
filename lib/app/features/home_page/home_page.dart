@@ -1,4 +1,6 @@
 import 'package:controla_expedicao/app/features/home_page/components/general_nav_widget.dart';
+import 'package:controla_expedicao/app/features/home_page/components/navs/my_orders_nav.dart';
+import 'package:controla_expedicao/app/features/home_page/components/navs/register_new_order_nav.dart';
 import 'package:flutter/material.dart';
 
 /// Home Page, is responsable for delivery the main functionalities like:
@@ -22,10 +24,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  final List<Widget> _screensNav = const [
-    GeneralNavWidget(text: 'Registrar'),
-    GeneralNavWidget(text: 'Minhas encomendas'),
-    GeneralNavWidget(text: 'Minha conta'),
+  final List<Widget> _screensNav = <Widget>[
+    const RegisterNewOrderNav(),
+    const MyOrdersNav(),
+    // const GeneralNavWidget(
+    //   text: 'Minha conta',
+    // ),
   ];
 
   // int _counter = 0;
@@ -57,7 +61,7 @@ class _HomePageState extends State<HomePage> {
       //     ],
       //   ),
       // ),
-      body: _screensNav[_currentIndex],
+      body: _screensNav.elementAt(_currentIndex),
       // floatingActionButton: FloatingActionButton(
       //   // onPressed: _incrementCounter,
       //   onPressed: (){},
@@ -66,23 +70,21 @@ class _HomePageState extends State<HomePage> {
       // ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        items: const [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.add),
             label: 'Registrar',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_basket),
-            label: 'Minhas encomendas',
+            label: 'Encomendas',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-
-            // icon: Icon(Icons.favorite),
-            label: 'Minha conta',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.person),
+          //   label: 'Minha conta',
+          // ),
         ],
-
+        selectedItemColor: Colors.black,
         onTap: _onTabTapped,
         // items: _screensNav,
       ),
