@@ -6,9 +6,6 @@ class RegisterNewOrderNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Registar'),
-      // ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -18,15 +15,11 @@ class RegisterNewOrderNav extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
-          // Text(
-          //   '$_counter',
-          //   style: Theme.of(context).textTheme.headline4,
-          // ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        // onPressed: _incrementCounter,
-        onPressed: (){},
+        backgroundColor: Colors.black,
+        onPressed: (){}, // ao pressionar, gerar um fomulário (registrar encomenda.)
         tooltip: 'Registrar encomendas!',
         child: const Icon(Icons.add),
       ),
